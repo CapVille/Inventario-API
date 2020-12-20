@@ -1,7 +1,7 @@
 from db.products_db import ProductsInDB
 from db.products_db import get_product, get_all_products, save_product, database_products
 
-from models.products_models import ProductIn, ProductOut, ProductIn2
+from models.products_models import ProductIn, ProductOut, ProductIn2, ProductOut2
 
 from fastapi import FastAPI, HTTPException
 
@@ -31,7 +31,7 @@ async def create_product(product_in: ProductIn):
     #Guardando Categoria
     product_saved = save_product(ProductsInDB(**product_in.dict()))
 
-    return ProductOut(**product_saved.dict())
+    return ProductOut2(**product_saved.dict())
 
 
 @api.get("/product/{bar_code}")
