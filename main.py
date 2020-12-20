@@ -95,6 +95,6 @@ async def get_all():
 
     products_out = []
     for product_db in products_db:
-        products_out.append(ProductOut(**product_db.dict()))
+        products_out.append(ProductOut2(**product_db.dict()))
 
     return products_out
